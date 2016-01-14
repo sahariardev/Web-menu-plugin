@@ -1,0 +1,152 @@
+<html>
+<head>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans);
+body
+{
+	margin: 0;
+}
+
+  .menu-container
+  {
+  	top: 0px;
+  	position: fixed;
+  	height: 100%;
+  	width: 250px;
+  	background-color: black;
+  	opacity: .7;
+  	
+  }
+  .menu-item
+  {
+
+  	font-family: 'Fira Sans', sans-serif;
+  	margin-bottom:30px;
+  	text-align: center;
+  	color:white;
+  	font-size: 30px;
+  	cursor: pointer;
+
+  }
+  .menu-item:hover
+  {
+  	background-color:#3399FF; 
+  }
+  .menu-sub-item:hover
+  {
+    background-color: #6B24B2;
+  }
+ .menu-item a{
+  	text-decoration: none;
+  }
+  .menu-back
+  {
+
+  	top: 0px;
+  	position: absolute;
+  	
+  	width: 250px;
+  	overflow: auto;
+  	padding-top: 20px;
+  }
+  #menu-btn
+  {
+  	margin-left: 100px;
+  	margin-top: 100px;
+  	cursor: pointer;
+
+  }
+  .menu-header
+  {
+  	margin-bottom: 50px;
+
+  }
+
+   .btn
+   {
+   	  cursor: pointer;
+   }
+   .menu-sub-item
+   {
+       text-align: center;
+       color: white;
+       font-size: 22px;
+       margin-bottom: 10px;
+       cursor: pointer;
+       padding: 5px 5px;
+
+   }
+
+
+</style>
+
+
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+   <script src="jquery-ui.js"></script>
+
+</head>
+<body>
+
+ <div class="menu-container">
+ </div>
+  <div class="menu-back">
+      <div class="menu-header"><img src="images/close.png" width="40px" align="right" style="margin-right:10px; cursor:pointer;" id="menu-close"> </div> 
+      <div class="menu-item"> <a>Home</a> </div>
+      <div class="menu-item"><a> Item</a> </div>
+      <div class="menu-item" id="toggle-items-g1"> Products <img src="images/da.png" width="20px"></div>
+      <div id="m-g1">
+          <div class="menu-sub-item"> <a>Item 01</a> </div>
+          <div class="menu-sub-item"> <a>Item 01</a> </div>
+          <div class="menu-sub-item"> <a>Item 01</a> </div>
+       </div>
+
+      <div class="menu-item"> <a>item 04</a> </div>
+      <div class="menu-item"><a> item 05</a></div>
+      <div class="menu-item"> <a>item 06</a> </div>
+ </div>
+
+
+<div > <img src="images/menu.png" height="40px" id="menu-btn" /> </div>
+
+ 
+  
+ 
+
+
+<script>
+ $( "#menu-btn" ).click(function() {
+ 	$(".menu-container").toggle("slide");
+ 	$(".menu-back").toggle("slide");
+
+ 	$(this).hide();
+  //$( ".menu-container" ).css( "visibility","visible" );
+});
+ $(document).ready(function()
+ {
+ 	$(".menu-container").toggle();
+ 	$(".menu-back").toggle();
+ 	$("#m-g1").toggle();
+ });
+$("#menu-close").click(function()
+{
+	$(".menu-container").toggle("slide");
+ 	$(".menu-back").toggle("slide");
+ 	$("#menu-btn").delay( 200 ).fadeIn();
+});
+$("#toggle-items-g1").click(function(){
+
+  $("#m-g1").toggle("slow");
+
+
+});
+
+</script>
+
+
+
+</body>
+
+
+
+
+</html>
